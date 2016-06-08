@@ -17,13 +17,13 @@ public aspect ValidateAnimalTypeAspect {
     @Before("execution(boolean edu.feaster83.springexamples.building.AbstractCage.add*(Animal))")
     public void validateAddMethod(JoinPoint joinPoint) {
         AbstractCage<?> cage = (AbstractCage<?>) joinPoint.getTarget();
-        Animal animal = (Animal)joinPoint.getArgs()[0];
+        Animal animal = (Animal) joinPoint.getArgs()[0];
 
         boolean allowed = cage.animalAllowed(animal);
         log.info("Add {} to {} is {}allowed", animal.getClass().getSimpleName(), cage.getClass().getSimpleName(), allowed ? "" : "NOT ");
     }
 
-    @Before("execution(boolean edu.feaster83.springexamples.building.AbstractCage.addAll(*))")
+    @Before("execution(boolean edu.feaster83.springexamples.building.AbstractCage.addAll(Collection))")
     public void validateAddAllMethod(JoinPoint joinPoint) {
         AbstractCage<?> cage = (AbstractCage<?>) joinPoint.getTarget();
         Collection<Animal> animals = (Collection<Animal>) joinPoint.getArgs()[0];
