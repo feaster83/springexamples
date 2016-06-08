@@ -20,7 +20,7 @@ public aspect ValidateAnimalTypeAspect {
         Animal animal = (Animal)joinPoint.getArgs()[0];
 
         boolean allowed = cage.animalAllowed(animal);
-        log.info("Add {} to cage: {} is allowed = {}", animal.getClass().getSimpleName(), cage.getClass().getSimpleName(), allowed);
+        log.info("Add {} to {} is {}allowed", animal.getClass().getSimpleName(), cage.getClass().getSimpleName(), allowed ? "" : "NOT ");
     }
 
     @Before("execution(boolean edu.feaster83.springexamples.building.AbstractCage.addAll(*))")
@@ -28,10 +28,10 @@ public aspect ValidateAnimalTypeAspect {
         AbstractCage<?> cage = (AbstractCage<?>) joinPoint.getTarget();
         Collection<Animal> animals = (Collection<Animal>) joinPoint.getArgs()[0];
 
-        log.info("Add multiple items to cage: {}", cage.getClass().getSimpleName());
+        log.info("Add multiple items to {}", cage.getClass().getSimpleName());
         animals.stream().forEach(animal -> {
             boolean allowed = cage.animalAllowed(animal);
-            log.info("- Add {} is allowed = {}", animal.getClass().getSimpleName(), allowed);
+            log.info("- Add {} is {}allowed", animal.getClass().getSimpleName(), allowed ? "" : "NOT ");
         });
     }
 }

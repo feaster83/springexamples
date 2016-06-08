@@ -14,15 +14,13 @@ mvn clean process-classes exec:java
 
 ## Output of the application
 ```
-0    [edu.feaster83.springexamples.ZooApp.main()] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext  - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@78c339e0: startup date [Wed Jun 08 23:23:15 CEST 2016]; root of context hierarchy
-217  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.ZooApp  - Starting ZooApp application
-259  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - Add Dog to cage: CatCage is allowed = false
-259  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - Add multiple items to cage: CatCage
-261  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - - Add Dog is allowed = false
-261  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - - Add Cat is allowed = true
-261  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - Add Dog to cage: DogCage is allowed = true
-261  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - Add multiple items to cage: DogCage
-261  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - - Add Dog is allowed = true
-261  [edu.feaster83.springexamples.ZooApp.main()] INFO  edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  - - Add Cat is allowed = false
-276  [edu.feaster83.springexamples.ZooApp.main()] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext  - Closing org.springframework.context.annotation.AnnotationConf
+edu.feaster83.springexamples.ZooApp  | Starting ZooApp application
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | Add Dog to CatCage is NOT allowed
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | Add multiple items to CatCage
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | - Add Dog is NOT allowed
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | - Add Cat is allowed
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | Add Dog to DogCage is allowed
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | Add multiple items to DogCage
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | - Add Dog is allowed
+edu.feaster83.springexamples.building.aspect.ValidateAnimalTypeAspect  | - Add Cat is NOT allowed
 ```
