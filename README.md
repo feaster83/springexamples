@@ -11,6 +11,7 @@ To run the application you should use the following command:
 ```bash
 mvn clean process-classes exec:java
 ```
+* Maven and Java 8 are required on the environment
 
 ## Output of the application
 ```
